@@ -39,9 +39,12 @@ async function initMap() {
   const select = document.getElementById("locations");
   select.addEventListener("change", () => {
     const newLocation = select.value;
-    map.panTo(eval(newLocation));
-    // map.setZoom(3);
+    map.setCenter(newLocation);
+    map.setZoom(3);
   })
 }
 
 initMap();
+
+
+setZoom is working but setCenter is not. What could be the issue?

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,17 +10,52 @@
   color: #fefefe;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.column, .row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.row {
+  flex-direction: row;
+}
+
 html {
   width: 100%;
   height: 100%;
 }
-html body {
+html .body {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #141414;
+  padding: 24px;
+}
+html .body .left,
+html .body .right {
+  width: 50%;
+  height: 100%;
+}
+html .body .left #map {
+  width: 600px;
+  aspect-ratio: 4/3;
+  border: 1px solid #fefefe;
+  border-radius: 16px;
+}
+html .body .right {
   justify-content: center;
-  gap: 24px;
+}
+html .body .right select {
+  width: 70%;
+  border: 1px solid #fefefe;
   background: #141414;
 }

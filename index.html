@@ -6,19 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Map</title>
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./scripts/script.js"></script>
 </head>
 
-<body>
-    <h1>Yohoo!!</h1>
-    <p>You made it to the maps page</p>
+<body class="body row">
+    <div class="left column">
+        <h1>Yohoo!!</h1>
+        <p>You made it to the maps page</p>
+        <div id="map"></div>
+    </div>
+    <div class="right column">
+        <h2>Select your shipping location</h2>
+        <select id="locations">
+            <option value="chicago">Chicago, USA</option>
+            <option value="newyork">New York City, USA</option>
+            <option value="london">London, UK</option>
+            <option value="tokyo">Tokyo, Japan</option>
+            <option value="sydney">Sydney, Australia</option>
+            <option value="paris">Paris, France</option>
+        </select>
 
-    <div id="map"></div>
+    </div>
 
-    <script src="./scripts/script.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-beuXYwjPiLqEVIgXuzZgfW0ARoDvFls&loading=async&callback=initMap">
-        </script>
+    <script>
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+            key: "AIzaSyB-beuXYwjPiLqEVIgXuzZgfW0ARoDvFls",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
 </body>
 
 </html>
